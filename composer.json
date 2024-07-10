@@ -1,0 +1,21 @@
+{
+    "name": "maximaster/bitrix-enums",
+    "description": "Предоставляет перечисления относящиеся к Битрикс, чтобы не использовать в коде строки или числа или знать о перечислениях Битрикса не подключая сам Битрикс (например не-Битрикс проектов которые обращаются к Битрикс по API)",
+    "license": "MIT",
+    "minimum-stability": "RC",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4",
+        "maximaster/bitrix-version": "^18.5.180",
+        "myclabs/php-enum": "^1.7",
+        "webmozart/assert": "^1.9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maximaster\\BitrixEnums\\": "src/"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.59"
+    }
+}
