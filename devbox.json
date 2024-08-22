@@ -1,14 +1,20 @@
 {
   "packages": [
-    "php@7.4",
-    "php74Packages.composer@latest"
+    "php@8.2",
+    "php82Packages.composer@latest"
   ],
   "shell": {
     "init_hook": [
       "export PATH=vendor/bin:$PATH"
     ],
     "scripts": {
-      "lint": "php-cs-fixer fix --dry-run --allow-risky=yes --diff --verbose",
+      "lint": [
+        "php-cs-fixer fix --dry-run --allow-risky=yes --diff --verbose",
+        "parallel-lint src",
+        "phpcs -p src --standard=PHPCompatibility --runtime-set testVersion 7.4",
+        "phpcs -p src --standard=PHPCompatibility --runtime-set testVersion 8.2",
+        "echo '[ OK ] LINTED'"
+      ],
       "fix": "php-cs-fixer fix --allow-risky=yes --diff --verbose"
     }
   }
